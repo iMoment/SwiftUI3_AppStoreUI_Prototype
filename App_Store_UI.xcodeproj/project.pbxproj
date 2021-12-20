@@ -11,6 +11,8 @@
 		91EC619E27712FCC00C187AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EC619D27712FCC00C187AE /* ContentView.swift */; };
 		91EC61A027712FCD00C187AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91EC619F27712FCD00C187AE /* Assets.xcassets */; };
 		91EC61A327712FCD00C187AE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91EC61A227712FCD00C187AE /* Preview Assets.xcassets */; };
+		91EC61AA27713F4500C187AE /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EC61A927713F4500C187AE /* DetailView.swift */; };
+		91EC61AD2771407000C187AE /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 91EC61AC2771407000C187AE /* SwiftUIX */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,7 @@
 		91EC619D27712FCC00C187AE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		91EC619F27712FCD00C187AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91EC61A227712FCD00C187AE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		91EC61A927713F4500C187AE /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91EC61AD2771407000C187AE /* SwiftUIX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +57,7 @@
 			children = (
 				91EC619B27712FCC00C187AE /* App_Store_UIApp.swift */,
 				91EC619D27712FCC00C187AE /* ContentView.swift */,
+				91EC61A927713F4500C187AE /* DetailView.swift */,
 				91EC619F27712FCD00C187AE /* Assets.xcassets */,
 				91EC61A127712FCD00C187AE /* Preview Content */,
 			);
@@ -83,6 +88,9 @@
 			dependencies = (
 			);
 			name = App_Store_UI;
+			packageProductDependencies = (
+				91EC61AC2771407000C187AE /* SwiftUIX */,
+			);
 			productName = App_Store_UI;
 			productReference = 91EC619827712FCC00C187AE /* App_Store_UI.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +119,9 @@
 				Base,
 			);
 			mainGroup = 91EC618F27712FCC00C187AE;
+			packageReferences = (
+				91EC61AB2771407000C187AE /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+			);
 			productRefGroup = 91EC619927712FCC00C187AE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91EC619E27712FCC00C187AE /* ContentView.swift in Sources */,
+				91EC61AA27713F4500C187AE /* DetailView.swift in Sources */,
 				91EC619C27712FCC00C187AE /* App_Store_UIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,6 +355,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		91EC61AB2771407000C187AE /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		91EC61AC2771407000C187AE /* SwiftUIX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 91EC61AB2771407000C187AE /* XCRemoteSwiftPackageReference "SwiftUIX" */;
+			productName = SwiftUIX;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 91EC619027712FCC00C187AE /* Project object */;
 }
