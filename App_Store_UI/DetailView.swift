@@ -10,6 +10,7 @@ import SwiftUIX
 
 struct DetailView: View {
     var namespace: Namespace.ID
+    @State var appear = false
     
     var body: some View {
         VStack(spacing: 16) {
@@ -25,11 +26,14 @@ struct DetailView: View {
                     Image("appLogo")
                         .frame(width: 36, height: 36)
                         .cornerRadius(10)
+                        .matchedGeometryEffect(id: "logo", in: namespace)
                     VStack(alignment: .leading, spacing: 4) {
                         Text("BurritoApp")
                             .font(.body).bold()
+                            .matchedGeometryEffect(id: "appname", in: namespace)
                         Text("Make your dream burrito into reality")
                             .font(.caption)
+                            .matchedGeometryEffect(id: "appdescription", in: namespace)
                     }
                     .foregroundColor(Color.white)
                     
@@ -39,9 +43,10 @@ struct DetailView: View {
                 .padding(12)
                 .background(
                     VisualEffectBlurView(blurStyle: .systemMaterialDark)
+                        .matchedGeometryEffect(id: "blur", in: namespace)
                 )
             }
-            .frame(maxWidth: .infinity, maxHeight: 500)
+            .frame(maxWidth: .infinity, maxHeight: 700)
             .background(
                 Image("image3")
                     .resizable()
@@ -54,6 +59,16 @@ struct DetailView: View {
                     .matchedGeometryEffect(id: "shape", in: namespace)
             )
             .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 10)
+            
+            Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+                .padding()
+                .offset(y: appear ? 0 : 100)
+                .onAppear {
+                    appear = true
+                }
+                .onDisappear {
+                    appear = false
+                }
             
             Spacer()
         }

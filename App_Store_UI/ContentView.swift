@@ -32,11 +32,14 @@ struct ContentView: View {
                             Image("appLogo")
                                 .frame(width: 36, height: 36)
                                 .cornerRadius(10)
+                                .matchedGeometryEffect(id: "logo", in: namespace)
                             VStack(alignment: .leading, spacing: 4) {
                                 Text("BurritoApp")
                                     .font(.body).bold()
+                                    .matchedGeometryEffect(id: "appname", in: namespace)
                                 Text("Make your dream burrito into reality")
                                     .font(.caption)
+                                    .matchedGeometryEffect(id: "appdescription", in: namespace)
                             }
                             .foregroundColor(Color.white)
                             
@@ -46,6 +49,7 @@ struct ContentView: View {
                         .padding(12)
                         .background(
                             VisualEffectBlurView(blurStyle: .systemMaterialDark)
+                                .matchedGeometryEffect(id: "blur", in: namespace)
                         )
                     }
                     .frame(maxWidth: .infinity, maxHeight: 335)
@@ -67,6 +71,7 @@ struct ContentView: View {
                 .padding(20)
             } else {
                 DetailView(namespace: namespace)
+//                    .transition(.move(edge: .bottom))
             }
         }
         .animation(.spring())
