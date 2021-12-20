@@ -9,26 +9,31 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
+        VStack(spacing: 16) {
             Text("Today")
                 .font(.largeTitle).bold()
+                .frame(maxWidth: .infinity, alignment: .leading)
             
-            VStack {
+            VStack(spacing: 0) {
                 Text("App of the day".uppercased()).font(.largeTitle).bold()
-                
-                Spacer()
+                    .foregroundColor(Color.white)
+                    .frame(maxWidth: 150, maxHeight: .infinity, alignment: .bottomLeading)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding()
                 
                 HStack {
                     Image("appLogo")
                         .frame(width: 36, height: 36)
                         .cornerRadius(10)
-                    VStack(alignment: .leading) {
+                    VStack(alignment: .leading, spacing: 4) {
                         Text("BurritoApp")
                             .font(.body).bold()
-                        Text("Make your dream burrito real")
+                        Text("Make your dream burrito into reality")
                             .font(.caption)
                     }
                     .foregroundColor(Color.white)
+                    
+                    Spacer()
                 }
                 .frame(maxWidth: .infinity)
                 .padding(12)
@@ -44,7 +49,7 @@ struct ContentView: View {
             .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
             .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 10)
             
-            
+            Spacer()
         }
         .padding(20)
     }
